@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "amatiasq.sort-imports",
+    "bradlc.vscode-tailwindcss",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "dunstontc.dark-plus-syntax",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "moalamri.inline-fold",
+    "PKief.material-icon-theme",
+    "stylelint.vscode-stylelint",
+    "vincaslt.highlight-matching-tag",
+    "vscode-icons-team.vscode-icons",
+    "yoavbls.pretty-ts-errors",
+    "zhuangtongfa.material-theme"
+  ]
+}
