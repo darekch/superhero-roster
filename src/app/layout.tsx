@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
@@ -13,20 +13,15 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'Home | Superheroes',
-  description: 'Superhero rost boilerplated by create next app',
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <main className=''>{children}</main>
       </body>
     </html>
   );
