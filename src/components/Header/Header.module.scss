@@ -1,0 +1,78 @@
+.headerTopbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0 1.5rem;
+
+  background-color: #202020;
+  border-bottom: 1px solid #393939;
+
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+  }
+}
+
+.headerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 0.75rem 0;
+
+  background-color: #202020;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0 4px;
+
+  width: auto;
+  height: 48px;
+
+  background-color: #ec1d24;
+
+  > span {
+    color: #fff;
+
+    font-size: 3.5rem;
+    font-weight: 900;
+
+    line-height: 52px;
+    text-indent: -4px;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+  }
+}
+
+nav.navMenu {
+  display: flex;
+
+  > a.navMenuItem {
+    display: flex;
+
+    margin: 0;
+    padding: 0 0.75rem;
+
+    > span {
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

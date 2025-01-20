@@ -13,5 +13,5 @@ const buildESLintCommand = (filenames) =>
 export default {
   '*.{js,jsx,ts,tsx}': [buildPrietterCommand, buildESLintCommand],
   '*.{json,yaml}': ['npm run check-prettier'],
-  'src/**/*.css': ['npm run check-prettier', 'npm run stylelint'],
+  'src/**/*.{css,scss}': ['npm run check-prettier', 'npm run stylelint'],
 };
