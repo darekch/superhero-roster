@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.filtersContent {
+  display: block;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 30%;
+  }
+}
+
+.listContent {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+  }
+}

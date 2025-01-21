@@ -10,7 +10,7 @@ type Props = {
   params: { id: string };
 };
 
-export default async function Character({ params }: Props) {
+export default async function CharacterPage({ params }: Props) {
   const { id } = await params;
   return (
     <main className='container mx-auto w-full flex-grow border-x-gray-200 xl:border-x'>

@@ -11,7 +11,7 @@ export function Header() {
           <div className={clsx(styles.logoWrapper, 'container')}>
             <Link href='/'>
               <h1 className={styles.brandLogo}>
-                <span>Superheroes</span>
+                <span>Superhero</span>
               </h1>
             </Link>
           </div>

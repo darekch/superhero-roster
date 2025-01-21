@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.title {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

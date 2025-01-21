@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 
+import { Heading } from '@/components/ui/Heading';
+import { Characters } from '@/components/Characters';
+
 export const metadata: Metadata = {
   title: 'Roster | Superheroes',
   description:
@@ -14,18 +17,18 @@ async function fetchData() {
   return res.json();
 }
 
-export default async function Characters() {
+export default async function CharactersPage() {
   const characters = await fetchData();
 
   return (
-    <main className='container mx-auto w-full flex-grow border-x-gray-200 xl:border-x'>
-      <div className='py-2 px-4'>
-        <div className='w-full'>
-          <p className='mb-2 text-sm font-semibold text-pink-600'>
-            Characters!
-          </p>
+    <main className='container w-full'>
+      <div className='w-full my-1'>
+        <Heading>
+          <span>Featured characters</span>
+        </Heading>
 
-          <pre>{JSON.stringify(characters, null, 4)}</pre>
+        <div className='block my-2'>
+          <Characters id='' />
         </div>
       </div>
     </main>

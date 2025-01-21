@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
-export default function Character() {
+export default function CharactersPage() {
   redirect('/characters');
 }
