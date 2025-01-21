@@ -30,9 +30,9 @@ const eslintConfig = [
       prettier: ESlintPluginPrettier,
     },
     rules: {
-      'no-console': 'warn',
       'prettier/prettier': 'warn',
       'react/react-in-jsx-scope': 'off',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
 ];

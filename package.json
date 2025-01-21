@@ -14,6 +14,7 @@
     "check-pre-commit": "npm run check-prettier && npm run lint && npm run stylelint"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "next": "15.1.5",
     "next-themes": "^0.4.4",

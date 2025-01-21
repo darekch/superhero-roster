@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 
+import { CharactersService } from '@/services';
 import { Heading } from '@/components/ui/Heading';
 import { Characters } from '@/components/Characters';
+
+// Ensures the page is rendered dynamically
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Roster | Superheroes',
@@ -9,16 +13,8 @@ export const metadata: Metadata = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 };
 
-async function fetchData() {
-  const res = await fetch('http://localhost:3000/api/superheroes');
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  return res.json();
-}
-
 export default async function CharactersPage() {
-  const characters = await fetchData();
+  const characters = await CharactersService.fetchCharacters();
 
   return (
     <main className='container w-full'>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { slugify } from '@/helpers';
 import { CharacterCard } from '@/components/CharacterCard';
 
 import { Props } from './CharactersList.types';
@@ -7,17 +8,22 @@ import styles from './CharactersList.module.scss';
 
 //
 export function CharactersList({ superheroes }: Props) {
+  const characters = () =>
+    superheroes.map(({ id, name, image }) => {
+      const pageLink = `/character/${slugify(name)}`;
+
+      return (
+        <li key={id} className={styles.listItem}>
+          <Link href={pageLink}>
+            <CharacterCard id={id} name={name} image={image} />
+          </Link>
+        </li>
+      );
+    });
+
   return (
     <div className={styles.wrapper}>
-      <ul className={styles.list}>
-        {superheroes.map(({ id, name, image }) => (
-          <li key={id} className={styles.listItem}>
-            <Link href={`/character/${id}`}>
-              <CharacterCard id={id} name={name} image={image} />
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <ul className={styles.list}>{characters()}</ul>
     </div>
   );
 }
