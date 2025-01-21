@@ -28,7 +28,7 @@ export default async function CharactersPage() {
         </Heading>
 
         <div className='block my-2'>
-          <Characters id='' />
+          <Characters characters={characters} />
         </div>
       </div>
     </main>

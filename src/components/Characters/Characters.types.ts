@@ -1,3 +1,5 @@
+import { Superhero } from '@/types/superhero';
+
 export type Props = {
-  id: string;
+  characters: Superhero[];
 };

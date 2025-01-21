@@ -11,5 +11,6 @@ module.exports = {
     'comment-empty-line-before': null,
     'media-feature-range-notation': null,
     'declaration-empty-line-before': null,
+    'selector-pseudo-element-colon-notation': null,
   },
 };

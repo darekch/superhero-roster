@@ -1,10 +1,9 @@
 'use client';
 
 import { Props } from './Checkbox.types';
-
 import styles from './Checkbox.module.scss';
 
-export function Checkbox({ id, name, value, label, onChange }: Props) {
+export function Checkbox({ id, name, isChecked, label, onChange }: Props) {
   return (
     <div className={styles.wrapper}>
       <span className={styles.labelText}>{label}</span>
@@ -14,7 +13,7 @@ export function Checkbox({ id, name, value, label, onChange }: Props) {
           type='checkbox'
           id={id}
           name={name}
-          value={value}
+          checked={isChecked}
           className={styles.checkbox}
           onChange={onChange}
         />

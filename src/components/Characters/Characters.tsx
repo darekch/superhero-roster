@@ -1,19 +1,34 @@
-import { Props } from './Characters.types';
+'use client';
 
+import { useEffect } from 'react';
+
+import { useSuperheroStore } from '@/hooks';
 import { Filters } from '@/components/Filters';
 import { CharactersList } from '@/components/CharactersList';
 
+import { Props } from './Characters.types';
 import styles from './Characters.module.scss';
 
-export function Characters({ id }: Props) {
+//
+export function Characters({ characters }: Props) {
+  // Hooks
+  const { setSuperheroes, filteredSuperheroes } = useSuperheroStore();
+
+  // Effects
+  useEffect(() => {
+    setSuperheroes(characters);
+  }, [characters, setSuperheroes]);
+
+  const superheroes = filteredSuperheroes();
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.filtersContent}>
-        <Filters id='' />
+        <Filters />
       </div>
 
       <div className={styles.listContent}>
-        <CharactersList id='' />
+        <CharactersList superheroes={superheroes} />
       </div>
     </section>
   );

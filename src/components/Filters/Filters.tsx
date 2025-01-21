@@ -1,12 +1,56 @@
 'use client';
 
+import { ChangeEvent } from 'react';
+
+import { useSuperheroStore } from '@/hooks';
+import { SuperheroType, SuperheroUniverse } from '@/types';
 import { Input } from '@/components/ui/Input';
 import { Checkbox } from '@/components/ui/Checkbox';
 
-import { Props } from './Filters.types';
 import styles from './Filters.module.scss';
 
-export function Filters({ id }: Props) {
+//
+export function Filters() {
+  // Hooks
+  const {
+    searchQuery,
+    filterByType,
+    filterByUniverses,
+    setSearchQuery,
+    setFilterByType,
+    removeFilterByType,
+    setFilterByUniverses,
+    removeFilterByUniverse,
+  } = useSuperheroStore();
+
+  // Handlers
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event?.target;
+    setSearchQuery(value);
+  };
+
+  const handleFilterByType =
+    (type: SuperheroType) => (event: ChangeEvent<HTMLInputElement>) => {
+      const { checked } = event?.target;
+
+      if (checked) {
+        setFilterByType(type);
+      } else {
+        removeFilterByType(type);
+      }
+    };
+
+  const handleFilterByUniverse =
+    (universe: SuperheroUniverse) => (event: ChangeEvent<HTMLInputElement>) => {
+      const { checked } = event?.target;
+
+      if (checked) {
+        setFilterByUniverses(universe);
+      } else {
+        removeFilterByUniverse(universe);
+      }
+    };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.section}>
@@ -14,9 +58,9 @@ export function Filters({ id }: Props) {
         <div className={styles.sectionContent}>
           <Input
             name='search'
-            value=''
+            value={searchQuery}
             placeholder='Search...'
-            onChange={() => {}}
+            onChange={handleSearchChange}
           />
         </div>
       </div>
@@ -25,16 +69,36 @@ export function Filters({ id }: Props) {
         <h2 className={styles.title}>Type</h2>
         <div className={styles.sectionContent}>
           <Checkbox
-            name='checkbox-heroes'
-            value=''
             label='Heroes'
-            onChange={() => {}}
+            name='type-heroes'
+            isChecked={filterByType.includes(SuperheroType.Hero)}
+            onChange={handleFilterByType(SuperheroType.Hero)}
           />
+
           <Checkbox
-            name='checkbox-villains'
-            value=''
             label='Villains'
-            onChange={() => {}}
+            name='type-villains'
+            isChecked={filterByType.includes(SuperheroType.Villain)}
+            onChange={handleFilterByType(SuperheroType.Villain)}
+          />
+        </div>
+      </div>
+
+      <div className={styles.section}>
+        <h2 className={styles.title}>Universe</h2>
+        <div className={styles.sectionContent}>
+          <Checkbox
+            label='DC'
+            name='universe-dc'
+            isChecked={filterByUniverses.includes(SuperheroUniverse.DC)}
+            onChange={handleFilterByUniverse(SuperheroUniverse.DC)}
+          />
+
+          <Checkbox
+            label='Marvel'
+            name='universe-marvel'
+            isChecked={filterByUniverses.includes(SuperheroUniverse.Marvel)}
+            onChange={handleFilterByUniverse(SuperheroUniverse.Marvel)}
           />
         </div>
       </div>

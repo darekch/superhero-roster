@@ -1,7 +1,9 @@
+import { ChangeEvent } from 'react';
+
 export type Props = {
   id?: string;
   name: string;
-  value: string;
   label: string;
-  onChange(): void;
+  isChecked: boolean;
+  onChange(event: ChangeEvent<HTMLInputElement>): void;
 };
