@@ -16,10 +16,12 @@ export function Filters() {
     searchQuery,
     filterByType,
     filterByUniverse,
+    filterByFavourite,
     setSearchQuery,
     setFilterByType,
+    setFilterByFavourite,
     removeFilterByType,
-    setfilterByUniverse,
+    setFilterByUniverse,
     removeFilterByUniverse,
   } = useSuperheroStore();
 
@@ -45,11 +47,15 @@ export function Filters() {
       const { checked } = event?.target;
 
       if (checked) {
-        setfilterByUniverse(universe);
+        setFilterByUniverse(universe);
       } else {
         removeFilterByUniverse(universe);
       }
     };
+
+  const handleFilterByFavourites = () => {
+    setFilterByFavourite();
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -70,14 +76,12 @@ export function Filters() {
         <div className={styles.sectionContent}>
           <Checkbox
             label='Heroes'
-            name='type-heroes'
             isChecked={filterByType.includes(SuperheroType.Hero)}
             onChange={handleFilterByType(SuperheroType.Hero)}
           />
 
           <Checkbox
             label='Villains'
-            name='type-villains'
             isChecked={filterByType.includes(SuperheroType.Villain)}
             onChange={handleFilterByType(SuperheroType.Villain)}
           />
@@ -89,16 +93,25 @@ export function Filters() {
         <div className={styles.sectionContent}>
           <Checkbox
             label='DC'
-            name='universe-dc'
             isChecked={filterByUniverse.includes(SuperheroUniverse.DC)}
             onChange={handleFilterByUniverse(SuperheroUniverse.DC)}
           />
 
           <Checkbox
             label='Marvel'
-            name='universe-marvel'
             isChecked={filterByUniverse.includes(SuperheroUniverse.Marvel)}
             onChange={handleFilterByUniverse(SuperheroUniverse.Marvel)}
+          />
+        </div>
+      </div>
+
+      <div className={styles.section}>
+        <h2 className={styles.title}>Favourites</h2>
+        <div className={styles.sectionContent}>
+          <Checkbox
+            label='Show'
+            isChecked={filterByFavourite}
+            onChange={handleFilterByFavourites}
           />
         </div>
       </div>

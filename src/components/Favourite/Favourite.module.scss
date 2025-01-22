@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+
+  .button {
+    display: flex;
+    margin: 0;
+    padding: 4px;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &:hover {
+      cursor: pointer;
+      border-radius: 12px;
+      background-color: var(--background-accent);
+    }
+  }
+
+  .empty {
+    fill: #fff;
+    color: #fff;
+  }
+
+  .filled {
+    fill: var(--primary-color);
+    color: var(--primary-color);
+  }
+}

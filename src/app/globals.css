@@ -6,6 +6,7 @@
   --primary-color: #e62429;
   --card-color: #151515;
   --input-background: #ececec;
+  --background-accent: #f4f4f5;
 }
 
 [data-theme='dark'] {
@@ -14,6 +15,7 @@
   --text-color: #fff;
   --card-color: #18181b;
   --input-background: #fff;
+  --background-accent: #27272a;
 }
 /* --- */
 

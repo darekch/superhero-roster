@@ -30,16 +30,22 @@
 
       width: 100%;
 
-      > h1 {
-        display: block;
-        margin: 0;
-        padding: 0;
+      .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        > span {
-          color: var(--text-color);
-          font-weight: 700;
-          font-size: 2.5rem;
-          text-transform: uppercase;
+        > h1 {
+          display: block;
+          margin: 0;
+          padding: 0;
+
+          > span {
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+          }
         }
       }
 

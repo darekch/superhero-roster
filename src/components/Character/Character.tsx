@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { Favourite } from '@/components/Favourite';
+
 import { Props } from './Character.types';
 import styles from './Character.module.scss';
 
@@ -23,9 +25,13 @@ export function Character({ character }: Props) {
         </div>
 
         <div className={styles.topContent}>
-          <h1>
-            <span>{character.name}</span>
-          </h1>
+          <div className={styles.heading}>
+            <h1>
+              <span>{character.name}</span>
+            </h1>
+
+            <Favourite id={character.id} />
+          </div>
 
           <div className={styles.description}>
             <p>{character.description}</p>

@@ -23,7 +23,7 @@ export default async function CharactersPage() {
           <span>Featured characters</span>
         </Heading>
 
-        <div className='block my-2'>
+        <div className='flex w-full my-2'>
           <Characters characters={characters} />
         </div>
       </div>

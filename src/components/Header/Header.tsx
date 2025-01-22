@@ -12,7 +12,7 @@ export function Header() {
         <div className={styles.headerTopbar}>
           <div className={clsx(styles.logoWrapper, 'container')}>
             <div></div>
-            <Link href='/'>
+            <Link href='/characters'>
               <h1 className={styles.brandLogo}>
                 <span>Superhero</span>
               </h1>

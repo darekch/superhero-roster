@@ -23,7 +23,13 @@ export function CharactersList({ superheroes }: Props) {
 
   return (
     <div className={styles.wrapper}>
-      <ul className={styles.list}>{characters()}</ul>
+      {superheroes.length > 0 ? (
+        <ul className={styles.list}>{characters()}</ul>
+      ) : (
+        <div className={styles.noResults}>
+          <p>No results found.</p>
+        </div>
+      )}
     </div>
   );
 }

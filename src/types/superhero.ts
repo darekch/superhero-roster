@@ -3,7 +3,7 @@ import { SuperheroStat } from './superhero-stat';
 import { SuperheroUniverse } from './superhero-universe';
 
 export type Superhero = {
-  id: number | string;
+  id: string;
   name: string;
   image: string;
   score: number;

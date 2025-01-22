@@ -6,16 +6,21 @@ interface SuperheroState {
   searchQuery: string;
   filterByType: SuperheroType[];
   filterByUniverse: SuperheroUniverse[];
+  filterByFavourite: boolean;
+  favouriteSuperheroesIds: string[];
 }
 
 interface SuperheroActions {
   getFilteredSuperheroes: () => Superhero[];
   setSuperheroes: (data: Superhero[]) => void;
   setSearchQuery: (query: string) => void;
+  setFilterByFavourite: () => void;
   setFilterByType: (type: SuperheroType) => void;
   removeFilterByType: (type: SuperheroType) => void;
-  setfilterByUniverse: (universe: SuperheroUniverse) => void;
+  setFilterByUniverse: (universe: SuperheroUniverse) => void;
   removeFilterByUniverse: (universe: SuperheroUniverse) => void;
+  addFavouriteSuperheroId: (id: string) => void;
+  removeFavouriteSuperheroId: (id: string) => void;
 }
 
 const useSuperheroStore = create<SuperheroState & SuperheroActions>(
@@ -25,6 +30,8 @@ const useSuperheroStore = create<SuperheroState & SuperheroActions>(
       superheroes: [],
       filterByType: [],
       filterByUniverse: [],
+      filterByFavourite: false,
+      favouriteSuperheroesIds: [],
     };
 
     const actions: SuperheroActions = {
@@ -50,7 +57,7 @@ const useSuperheroStore = create<SuperheroState & SuperheroActions>(
         }));
       },
 
-      setfilterByUniverse: (universe) => {
+      setFilterByUniverse: (universe) => {
         return set((state) => ({
           filterByUniverse: state.filterByUniverse.includes(universe)
             ? state.filterByUniverse
@@ -66,9 +73,35 @@ const useSuperheroStore = create<SuperheroState & SuperheroActions>(
         }));
       },
 
+      addFavouriteSuperheroId: (id) => {
+        return set((state) => ({
+          favouriteSuperheroesIds: state.favouriteSuperheroesIds.includes(id)
+            ? state.favouriteSuperheroesIds
+            : [...state.favouriteSuperheroesIds, id],
+        }));
+      },
+
+      removeFavouriteSuperheroId: (id) => {
+        return set((state) => ({
+          favouriteSuperheroesIds: state.favouriteSuperheroesIds.filter(
+            (superheroId) => superheroId !== id
+          ),
+        }));
+      },
+
+      setFilterByFavourite: () => {
+        set((state) => ({ filterByFavourite: !state.filterByFavourite }));
+      },
+
       getFilteredSuperheroes: () => {
-        const { superheroes, searchQuery, filterByType, filterByUniverse } =
-          get();
+        const {
+          superheroes,
+          searchQuery,
+          filterByType,
+          filterByUniverse,
+          filterByFavourite,
+          favouriteSuperheroesIds,
+        } = get();
 
         let filtered = superheroes.filter((hero) =>
           hero.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -83,6 +116,12 @@ const useSuperheroStore = create<SuperheroState & SuperheroActions>(
         if (filterByUniverse.length > 0) {
           filtered = filtered.filter((hero) =>
             filterByUniverse.includes(hero.universe)
+          );
+        }
+
+        if (filterByFavourite) {
+          filtered = filtered.filter((hero) =>
+            favouriteSuperheroesIds.includes(hero.id)
           );
         }
 

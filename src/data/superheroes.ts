@@ -118,7 +118,7 @@ export const superheroesList: Array<Superhero> = [
     type: SuperheroType.Hero,
     universe: SuperheroUniverse.Marvel,
     weakness: [],
-    aliases: ['Gamora'],
+    aliases: ['Gamora', 'Marianna Szrajber'],
     stats: [
       {
         name: SuperheroStatName.Strength,
