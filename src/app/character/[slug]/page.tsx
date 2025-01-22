@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { slugify } from '@/helpers';
 import { Superhero } from '@/types';
 import { superheroesList } from '@/data';
+import { Back } from '@/components/ui/Back';
 import { Character } from '@/components/Character';
 // import { CharactersService } from '@/services';
 
@@ -30,6 +31,7 @@ export default async function CharacterPage({ params }: Props) {
   return (
     <main className='container w-full'>
       <div className='w-full px-1 my-1'>
+        <Back />
         <Character character={character} />
       </div>
     </main>
