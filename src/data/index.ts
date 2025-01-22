@@ -1,0 +1,1 @@
+export { superheroesList } from './superheroes';
