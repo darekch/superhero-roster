@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { slugify } from '@/helpers';
+import { NoResults } from '@/components/NoResults';
 import { CharacterCard } from '@/components/CharacterCard';
 
 import { Props } from './CharactersList.types';
@@ -25,11 +26,9 @@ export function CharactersList({ superheroes }: Props) {
     <div className={styles.wrapper}>
       {superheroes.length > 0 ? (
         <ul className={styles.list}>{characters()}</ul>
-      ) : (
-        <div className={styles.noResults}>
-          <p>No results found.</p>
-        </div>
-      )}
+      ) : null}
+
+      <NoResults />
     </div>
   );
 }

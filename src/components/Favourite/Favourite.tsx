@@ -1,9 +1,9 @@
 'use client';
 
+import { useCallback, useMemo } from 'react';
+
 import { useSuperheroStore } from '@/hooks';
 import { FavouriteIcon } from '@/components/ui/Icons/FavouriteIcon';
-
-import { useCallback, useMemo } from 'react';
 
 import { Props } from './Favourite.types';
 import styles from './Favourite.module.scss';
@@ -20,7 +20,7 @@ export function Favourite({ id }: Props) {
   // Value
   const isFavourite = useMemo(
     () => favouriteSuperheroesIds.includes(id),
-    [favouriteSuperheroesIds]
+    [id, favouriteSuperheroesIds]
   );
 
   // Handlers
@@ -32,7 +32,7 @@ export function Favourite({ id }: Props) {
         addFavouriteSuperheroId(id);
       }
     },
-    [isFavourite]
+    [id, addFavouriteSuperheroId, removeFavouriteSuperheroId]
   );
 
   return (

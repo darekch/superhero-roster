@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  > p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--text-color);
+
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+}
