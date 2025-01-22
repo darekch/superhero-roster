@@ -9,6 +9,7 @@ export type Superhero = {
   score: number;
   aliases: string[];
   weakness?: string[];
+  description: string;
   type: SuperheroType;
   stats: SuperheroStat[];
   universe: SuperheroUniverse;

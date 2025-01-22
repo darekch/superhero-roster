@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { slugify } from '@/helpers';
 import { Superhero } from '@/types';
 import { superheroesList } from '@/data';
+import { Character } from '@/components/Character';
 // import { CharactersService } from '@/services';
 
 type Props = {
@@ -27,11 +28,8 @@ export default async function CharacterPage({ params }: Props) {
   }
 
   return (
-    <main className='container mx-auto w-full flex-grow border-x-gray-200 xl:border-x'>
-      <div className='py-2 px-4'>
-        <div className='w-full'>Slug is: {slug}</div>
-        <pre>{JSON.stringify(character)}</pre>
-      </div>
+    <main className='container w-full'>
+      <Character character={character} />
     </main>
   );
 }

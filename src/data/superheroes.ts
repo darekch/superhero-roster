@@ -38,6 +38,8 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/dc/files/default_images/Char_Thumb_Batman_20190116_5c3fc4b40fae42.85141247.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '2',
@@ -71,6 +73,8 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/dc/files/default_images/Char_Thumb_Joker_5c4a42b7ef2011.52750480.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '3',
@@ -104,6 +108,8 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/dc/files/default_images/Char_Thumb_Superman_5c3fc2758f6984.90100206.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '4',
@@ -111,7 +117,7 @@ export const superheroesList: Array<Superhero> = [
     score: 8.4,
     type: SuperheroType.Hero,
     universe: SuperheroUniverse.Marvel,
-    weakness: [''],
+    weakness: [],
     aliases: ['Gamora'],
     stats: [
       {
@@ -136,6 +142,8 @@ export const superheroesList: Array<Superhero> = [
       },
     ],
     image: 'https://cdn.marvel.com/content/1x/022gam_ons_crd_02.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '5',
@@ -143,7 +151,7 @@ export const superheroesList: Array<Superhero> = [
     score: 9.9,
     type: SuperheroType.Villain,
     universe: SuperheroUniverse.Marvel,
-    weakness: [''],
+    weakness: [],
     aliases: ['Thanos'],
     stats: [
       {
@@ -168,6 +176,8 @@ export const superheroesList: Array<Superhero> = [
       },
     ],
     image: 'https://cdn.marvel.com/content/1x/019tha_ons_crd_03.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '6',
@@ -175,7 +185,7 @@ export const superheroesList: Array<Superhero> = [
     score: 8.7,
     type: SuperheroType.Hero,
     universe: SuperheroUniverse.DC,
-    weakness: [''],
+    weakness: [],
     aliases: ['Wonder woman', 'Woman'],
     stats: [
       {
@@ -201,6 +211,8 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/2023-02/Char_WhosWho_WonderWoman_20190116_5c3fc6aa51d124.25659603.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '7',
@@ -208,7 +220,7 @@ export const superheroesList: Array<Superhero> = [
     score: 8,
     type: SuperheroType.Villain,
     universe: SuperheroUniverse.DC,
-    weakness: [''],
+    weakness: [],
     aliases: ['Lex Luthor', 'Luthor'],
     stats: [
       {
@@ -234,6 +246,8 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/dc/files/default_images/Char_Thumb_LexLuthor_5c4a62d2862528.01646688.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '8',
@@ -241,7 +255,7 @@ export const superheroesList: Array<Superhero> = [
     score: 8,
     type: SuperheroType.Hero,
     universe: SuperheroUniverse.DC,
-    weakness: [''],
+    weakness: [],
     aliases: ['Aquaman'],
     stats: [
       {
@@ -267,6 +281,8 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/dc/files/default_images/Char_Thumb_Aquaman_5c411a95e70ff5.50429372.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '9',
@@ -274,7 +290,7 @@ export const superheroesList: Array<Superhero> = [
     score: 9.2,
     type: SuperheroType.Hero,
     universe: SuperheroUniverse.Marvel,
-    weakness: [''],
+    weakness: [],
     aliases: ['Thor', 'Thor Odinson'],
     stats: [
       {
@@ -299,6 +315,8 @@ export const superheroesList: Array<Superhero> = [
       },
     ],
     image: 'https://cdn.marvel.com/content/1x/004tho_ons_crd_04.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '10',
@@ -306,7 +324,7 @@ export const superheroesList: Array<Superhero> = [
     score: 7.9,
     type: SuperheroType.Hero,
     universe: SuperheroUniverse.Marvel,
-    weakness: [''],
+    weakness: [],
     aliases: ['Spiderman', 'Spider', 'Parker'],
     stats: [
       {
@@ -331,6 +349,8 @@ export const superheroesList: Array<Superhero> = [
       },
     ],
     image: 'https://cdn.marvel.com/content/1x/spidey02_ons_crd_01.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     id: '11',
@@ -364,5 +384,7 @@ export const superheroesList: Array<Superhero> = [
     ],
     image:
       'https://static.dc.com/dc/files/default_images/Char_Thumb_HarleyQuinn_5c4a3e758122a3.39576701.jpg',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
