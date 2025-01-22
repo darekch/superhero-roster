@@ -38,6 +38,7 @@ export function Favourite({ id }: Props) {
   return (
     <div className={styles.wrapper}>
       <button
+        id='favourite-button'
         className={styles.button}
         onClick={handleToggleFavourite(isFavourite)}
       >

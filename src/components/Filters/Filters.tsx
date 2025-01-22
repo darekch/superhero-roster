@@ -75,12 +75,14 @@ export function Filters() {
         <h2 className={styles.title}>Type</h2>
         <div className={styles.sectionContent}>
           <Checkbox
+            id='filter-type-heroes'
             label='Heroes'
             isChecked={filterByType.includes(SuperheroType.Hero)}
             onChange={handleFilterByType(SuperheroType.Hero)}
           />
 
           <Checkbox
+            id='filter-type-villains'
             label='Villains'
             isChecked={filterByType.includes(SuperheroType.Villain)}
             onChange={handleFilterByType(SuperheroType.Villain)}

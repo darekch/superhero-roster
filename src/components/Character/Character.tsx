@@ -26,7 +26,7 @@ export function Character({ character }: Props) {
 
         <div className={styles.topContent}>
           <div className={styles.heading}>
-            <h1>
+            <h1 id='character-heading'>
               <span>{character.name}</span>
             </h1>
 
@@ -44,7 +44,7 @@ export function Character({ character }: Props) {
                   <span>Character facts</span>
                 </h2>
 
-                <div className={styles.detailsItem}>
+                <div id='character-score' className={styles.detailsItem}>
                   <span>Score:</span>
                   <strong>{character.score}</strong>
                 </div>
@@ -59,7 +59,7 @@ export function Character({ character }: Props) {
                   <strong>{character.universe}</strong>
                 </div>
 
-                <div className={styles.detailsItem}>
+                <div id='character-weakness' className={styles.detailsItem}>
                   <span>Weakness:</span>
                   <strong>{emptyLine(list(character.weakness))}</strong>
                 </div>

@@ -23,7 +23,7 @@ export function CharactersList({ superheroes }: Props) {
     });
 
   return (
-    <div className={styles.wrapper}>
+    <div id='characters-list' className={styles.wrapper}>
       {superheroes.length > 0 ? (
         <ul className={styles.list}>{characters()}</ul>
       ) : null}
