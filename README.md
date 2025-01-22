@@ -2,17 +2,38 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+To get started, please switch to branch `feature/superhero-roster-page`,
+I wanted to demonstrated my gitflow workflow, please open [pr-description.md](./pr-description.md) file.
+
+In order to install required packages, run `npm install` in the root directory.
+
+```bash
+npm install
+```
+
+First, run frontend app and the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+
+To start e2e tests with Playwright, run:
+
+```bash
+npm run test:e2e
+```
+
+To start unit tests with Jest, run
+
+```bash
+npm run test
+```
+
+## Demo
+
+Demo is available and deployed on Vercel host: [https://superhero-roster.vercel.app/](https://superhero-roster.vercel.app/)
+
+## Localhost run
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
