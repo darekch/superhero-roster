@@ -1,81 +1,97 @@
 import { create } from 'zustand';
-
 import { Superhero, SuperheroType, SuperheroUniverse } from '@/types';
 
 interface SuperheroState {
   superheroes: Superhero[];
   searchQuery: string;
   filterByType: SuperheroType[];
-  filterByUniverses: SuperheroUniverse[];
-  //
-  filteredSuperheroes: () => Superhero[];
+  filterByUniverse: SuperheroUniverse[];
+}
+
+interface SuperheroActions {
+  getFilteredSuperheroes: () => Superhero[];
   setSuperheroes: (data: Superhero[]) => void;
   setSearchQuery: (query: string) => void;
   setFilterByType: (type: SuperheroType) => void;
   removeFilterByType: (type: SuperheroType) => void;
-  setFilterByUniverses: (universe: SuperheroUniverse) => void;
+  setfilterByUniverse: (universe: SuperheroUniverse) => void;
   removeFilterByUniverse: (universe: SuperheroUniverse) => void;
 }
 
-const useSuperheroStore = create<SuperheroState>((set, get) => ({
-  searchQuery: '',
-  superheroes: [],
-  filterByType: [],
-  filterByUniverses: [],
-  //
-  setSuperheroes: (data) => set({ superheroes: data }),
+const useSuperheroStore = create<SuperheroState & SuperheroActions>(
+  (set, get) => {
+    const state: SuperheroState = {
+      searchQuery: '',
+      superheroes: [],
+      filterByType: [],
+      filterByUniverse: [],
+    };
 
-  setSearchQuery: (query) => set({ searchQuery: query }),
+    const actions: SuperheroActions = {
+      setSuperheroes: (data) => {
+        return set({ superheroes: data });
+      },
 
-  setFilterByType: (type) =>
-    set((state) => {
-      if (!state.filterByType.includes(type)) {
-        return { filterByType: [...state.filterByType, type] };
-      }
-      return state;
-    }),
+      setSearchQuery: (query) => {
+        return set({ searchQuery: query });
+      },
 
-  removeFilterByType: (type) =>
-    set((state) => {
-      return { filterByType: state.filterByType.filter((t) => t !== type) };
-    }),
+      setFilterByType: (type) => {
+        return set((state) => ({
+          filterByType: state.filterByType.includes(type)
+            ? state.filterByType
+            : [...state.filterByType, type],
+        }));
+      },
 
-  setFilterByUniverses: (universe) =>
-    set((state) => {
-      if (!state.filterByUniverses.includes(universe)) {
-        return { filterByUniverses: [...state.filterByUniverses, universe] };
-      }
-      return state;
-    }),
+      removeFilterByType: (type) => {
+        return set((state) => ({
+          filterByType: state.filterByType.filter((t) => t !== type),
+        }));
+      },
 
-  removeFilterByUniverse: (universe) =>
-    set((state) => {
-      return {
-        filterByUniverses: state.filterByUniverses.filter(
-          (u) => u !== universe
-        ),
-      };
-    }),
+      setfilterByUniverse: (universe) => {
+        return set((state) => ({
+          filterByUniverse: state.filterByUniverse.includes(universe)
+            ? state.filterByUniverse
+            : [...state.filterByUniverse, universe],
+        }));
+      },
 
-  filteredSuperheroes: () => {
-    const { superheroes, searchQuery, filterByType, filterByUniverses } = get();
+      removeFilterByUniverse: (universe) => {
+        return set((state) => ({
+          filterByUniverse: state.filterByUniverse.filter(
+            (u) => u !== universe
+          ),
+        }));
+      },
 
-    let filtered = superheroes.filter((hero) =>
-      hero.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+      getFilteredSuperheroes: () => {
+        const { superheroes, searchQuery, filterByType, filterByUniverse } =
+          get();
 
-    if (filterByType.length > 0) {
-      filtered = filtered.filter((hero) => filterByType.includes(hero.type));
-    }
+        let filtered = superheroes.filter((hero) =>
+          hero.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
 
-    if (filterByUniverses.length > 0) {
-      filtered = filtered.filter((hero) =>
-        filterByUniverses.includes(hero.universe)
-      );
-    }
+        if (filterByType.length > 0) {
+          filtered = filtered.filter((hero) =>
+            filterByType.includes(hero.type)
+          );
+        }
 
-    return filtered;
-  },
-}));
+        if (filterByUniverse.length > 0) {
+          filtered = filtered.filter((hero) =>
+            filterByUniverse.includes(hero.universe)
+          );
+        }
+
+        return filtered;
+      },
+    };
+
+    return { ...state, ...actions };
+  }
+);
 
 export { useSuperheroStore };

@@ -1,24 +1,34 @@
 /* Theme Palette */
 :root {
   --background: #fff;
-  --foreground: #171717;
+  --foreground: #09090b;
+  --text-color: #000;
+  --primary-color: #e62429;
+  --card-color: #151515;
+  --input-background: #ececec;
 }
 
 [data-theme='dark'] {
-  --background: #171717;
+  --background: #09090b;
   --foreground: #fff;
+  --text-color: #fff;
+  --card-color: #18181b;
+  --input-background: #fff;
 }
 /* --- */
 
 /* Global elements basic styles */
 html,
 body {
-  height: 100vh;
+  height: 100%;
   max-width: 100vw;
+
   overflow-x: hidden;
 }
 
 body {
+  min-height: 100vh;
+
   color: var(--foreground);
   background: var(--background);
 
@@ -32,8 +42,15 @@ main {
   display: flex;
   flex-direction: column;
 
+  flex: 1;
   margin: 0 auto;
   padding: 0;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 /* --- */
 

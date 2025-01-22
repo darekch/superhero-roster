@@ -29,7 +29,9 @@ export default async function CharacterPage({ params }: Props) {
 
   return (
     <main className='container w-full'>
-      <Character character={character} />
+      <div className='w-full px-1 my-1'>
+        <Character character={character} />
+      </div>
     </main>
   );
 }
@@ -65,6 +67,6 @@ export async function generateMetadata({
 
   return {
     title: `${character.name} | Superheroes`,
-    description: `${character.name}'s detailed superhero profile.`,
+    description: `${character.description}`,
   };
 }

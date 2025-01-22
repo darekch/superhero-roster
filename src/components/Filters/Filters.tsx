@@ -15,11 +15,11 @@ export function Filters() {
   const {
     searchQuery,
     filterByType,
-    filterByUniverses,
+    filterByUniverse,
     setSearchQuery,
     setFilterByType,
     removeFilterByType,
-    setFilterByUniverses,
+    setfilterByUniverse,
     removeFilterByUniverse,
   } = useSuperheroStore();
 
@@ -45,7 +45,7 @@ export function Filters() {
       const { checked } = event?.target;
 
       if (checked) {
-        setFilterByUniverses(universe);
+        setfilterByUniverse(universe);
       } else {
         removeFilterByUniverse(universe);
       }
@@ -90,14 +90,14 @@ export function Filters() {
           <Checkbox
             label='DC'
             name='universe-dc'
-            isChecked={filterByUniverses.includes(SuperheroUniverse.DC)}
+            isChecked={filterByUniverse.includes(SuperheroUniverse.DC)}
             onChange={handleFilterByUniverse(SuperheroUniverse.DC)}
           />
 
           <Checkbox
             label='Marvel'
             name='universe-marvel'
-            isChecked={filterByUniverses.includes(SuperheroUniverse.Marvel)}
+            isChecked={filterByUniverse.includes(SuperheroUniverse.Marvel)}
             onChange={handleFilterByUniverse(SuperheroUniverse.Marvel)}
           />
         </div>

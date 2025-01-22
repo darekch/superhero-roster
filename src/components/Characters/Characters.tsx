@@ -12,14 +12,14 @@ import styles from './Characters.module.scss';
 //
 export function Characters({ characters }: Props) {
   // Hooks
-  const { setSuperheroes, filteredSuperheroes } = useSuperheroStore();
+  const { setSuperheroes, getFilteredSuperheroes } = useSuperheroStore();
 
   // Effects
   useEffect(() => {
     setSuperheroes(characters);
   }, [characters, setSuperheroes]);
 
-  const superheroes = filteredSuperheroes();
+  const superheroes = getFilteredSuperheroes();
 
   return (
     <section className={styles.wrapper}>

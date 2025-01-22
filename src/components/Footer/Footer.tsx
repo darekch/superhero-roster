@@ -1,9 +1,11 @@
+import { clsx } from 'clsx';
+
 import styles from './Footer.module.scss';
 
 export function Footer() {
   return (
-    <footer className={styles.footerWrapper}>
-      <div className='container mx-auto flex items-center justify-end'>
+    <footer className={styles.wrapper}>
+      <div className={clsx(styles.content, 'container')}>
         <a
           className={styles.descriptionLink}
           href='https://gist.github.com/piotrekskc/2909093d17a225f2c219a0e9c38256b5'

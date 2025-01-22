@@ -1,19 +1,25 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
+
 import styles from './Header.module.scss';
 
 export function Header() {
   return (
-    <header className='flex w-full justify-center'>
-      <div className='flex flex-col w-full'>
+    <header className={styles.wrapper}>
+      <div className={clsx(styles.content)}>
         <div className={styles.headerTopbar}>
           <div className={clsx(styles.logoWrapper, 'container')}>
+            <div></div>
             <Link href='/'>
               <h1 className={styles.brandLogo}>
                 <span>Superhero</span>
               </h1>
             </Link>
+            <div>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
 

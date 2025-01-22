@@ -4,7 +4,7 @@ import { CharactersService } from '@/services';
 import { Heading } from '@/components/ui/Heading';
 import { Characters } from '@/components/Characters';
 
-// Ensures the page is rendered dynamically
+// Ensures the page is rendered dynamically, needed to `npm run build` not be angry
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default async function CharactersPage() {
 
   return (
     <main className='container w-full'>
-      <div className='w-full my-1'>
+      <div className='w-full px-1 my-1'>
         <Heading>
           <span>Featured characters</span>
         </Heading>

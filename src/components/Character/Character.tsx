@@ -12,13 +12,15 @@ export function Character({ character }: Props) {
   return (
     <section className={styles.wrapper}>
       <div className={styles.content}>
-        <Image
-          className={styles.picture}
-          src={character.image}
-          alt={character.name}
-          width={300}
-          height={450}
-        />
+        <div className={styles.picture}>
+          <Image
+            className={styles.pictureImage}
+            src={character.image}
+            alt={character.name}
+            width={450}
+            height={450}
+          />
+        </div>
 
         <div className={styles.topContent}>
           <h1>
